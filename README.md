@@ -1,5 +1,18 @@
-# Vue 3 + Vite
+🌦️ Weather Widget (Vue 3)
+This project is an interactive weather widget built with Vue.js 3 (Options API) - https://weather-forecast-vuejs.vercel.app/
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+🚀 Key Features:
+    Fetches weather data for multiple cities (Perth, Moscow, Paris) using the OpenWeather API
+    Dynamically loads background images for each city using the Unsplash API
+    Gradient background color that changes based on temperature, with transparency for a more vivid image
+    Displays official OpenWeather weather icons
+    Shows the current date and day of the week on the card
+    Clean and modern UI with potential for responsive design
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+🛠️ Technologies Used:
+    Vue 3 (Options API)
+    Axios for HTTP requests
+    Day.js for date formatting
+    OpenWeather API for weather data
+    Unsplash API for random background images
+

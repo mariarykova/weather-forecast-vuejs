@@ -6,7 +6,10 @@
         </div>
         <div class="weather-details">
             <div class="current-date">{{ currentDate }}</div>
-            <div class="weather-description">{{ capitalizedDescription }}</div>
+            <div class="weather-info">
+                <div class="weather-description">{{ capitalizedDescription }}</div>
+                <img :src="weatherIconUrl" alt="Weather Icon" class="weather-icon" />
+            </div>
         </div>
   </div>
 </template>
@@ -20,7 +23,8 @@ export default {
     city: String,
     temperature: Number,
     description: String,
-    backgroundUrl: String
+    backgroundUrl: String,
+    iconCode: String
   },
   data() {
     return {
@@ -55,8 +59,13 @@ export default {
     capitalizedDescription() {
     if (!this.description) return ''
     return this.description.charAt(0).toUpperCase() + this.description.slice(1)
-  }
-  }
+  },
+    weatherIconUrl() {
+        return this.iconCode
+            ? `https://openweathermap.org/img/wn/${this.iconCode}@2x.png`
+            : ''
+        }
+    }
 }
 </script>
 
@@ -89,5 +98,14 @@ export default {
     color: #6B6B6B;
     font-size: 12px;
     font-weight: bold;
+}
+.weather-icon {
+    width: 30px;
+    height: 30px;
+}
+.weather-info {
+     display: flex;
+     justify-content: space-between;
+     align-items: center
 }
 </style>

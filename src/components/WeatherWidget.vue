@@ -8,6 +8,7 @@
                 :temperature="weatherData[cityName]?.temperature"
                 :description="weatherData[cityName]?.description"
                 :backgroundUrl="weatherData[cityName]?.backgroundUrl"
+                :iconCode="weatherData[cityName]?.iconCode"
             />
             </template>
     </div>
@@ -41,13 +42,15 @@ export default {
         const data = response.data
         const desc = data.weather[0].description
         const bgUrl = await this.getBackgroundUrl(cityName, unsplashKey)
+         const iconCode = data.weather[0].icon
 
         this.weatherData = {
             ...this.weatherData,
             [cityName]: {
                 temperature: Math.round(data.main.temp),
                 description: data.weather[0].description,
-                backgroundUrl: bgUrl
+                backgroundUrl: bgUrl,
+                iconCode: iconCode
             }
     }
       } catch (error) {
